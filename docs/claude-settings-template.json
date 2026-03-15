@@ -1,0 +1,31 @@
+{
+  "_comment": "ClaudeState hook configuration for Claude Code (~/.claude/settings.json)",
+  "_docs": "https://github.com/your-org/claudestate#claude-code-hook",
+
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 claudestate-hook.py",
+            "_comment": "Runs before every tool call — injects STATE.md into CLAUDE.md"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 claudestate-hook.py",
+            "_comment": "Re-syncs context after every bash command"
+          }
+        ]
+      }
+    ]
+  }
+}

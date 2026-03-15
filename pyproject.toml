@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "claudestate"
+version = "0.1.0"
+description = "AI-maintained memory files for token-efficient development with Claude"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+  { name = "ClaudeState Contributors" },
+]
+keywords = [
+  "claude", "anthropic", "ai", "memory", "token-optimizer",
+  "developer-tools", "cli", "state-management", "llm",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Utilities",
+]
+dependencies = [
+  "typer>=0.12",
+  "rich>=13",
+  "anthropic>=0.28",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "pytest-cov",
+  "ruff",
+  "mypy",
+]
+
+[project.scripts]
+claudestate = "claudestate.cli:main"
+cs = "claudestate.cli:main"          # short alias
+
+[project.urls]
+Homepage = "https://github.com/benslimanh/claudestate"
+Documentation = "https://github.com/benslimanh/claudestate#readme"
+Issues = "https://github.com/benslimanh/claudestate/issues"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=claudestate --cov-report=term-missing"
