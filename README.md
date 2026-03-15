@@ -1,11 +1,43 @@
 # ClaudeState
 
-**AI-maintained project memory and token optimizer for Claude Code.**
+**Persistent memory layer for vibe coding with Claude Code.**
 
 [![PyPI](https://img.shields.io/pypi/v/claudestate)](https://pypi.org/project/claudestate/)
 [![Python](https://img.shields.io/pypi/pyversions/claudestate)](https://pypi.org/project/claudestate/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Tests](https://github.com/benslimanh/claudestate/actions/workflows/test.yml/badge.svg)](https://github.com/benslimanh/claudestate/actions)
+
+---
+
+## Why ClaudeState
+
+ClaudeState keeps your project plan outside the model's short-term context so Claude can resume work without losing direction.
+
+- Keep one source of truth in `STATE.md`
+- Reduce wasted context loading each session
+- Track blockers and progress in a way AI can reliably follow
+
+## 30-Second Demo
+
+```bash
+pipx install claudestate
+cd my-project
+claudestate init --name "my-project" --goal "Ship MVP fast"
+claudestate sync
+claudestate checkpoint "Initialise repository structure"
+```
+
+## Vibe Coding Workflow
+
+Use this loop every session:
+
+1. `claudestate sync` to get the current briefing.
+2. Ask Claude to continue from `STATE.md`.
+3. Implement the task in small chunks.
+4. `claudestate checkpoint "task"` when done.
+5. Repeat.
+
+This keeps coding momentum high while preventing context drift.
 
 ---
 
