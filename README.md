@@ -158,7 +158,7 @@ The short alias `cs` is also available (e.g. `cs sync`).
 # rust-json-parser — State File
 
 | Field        | Value                           |
-|---|---|
+|--------------|---------------------------------|
 | Goal         | Zero-copy JSON parser with SIMD |
 | Language     | Rust                            |
 | Last Updated | 2025-01-22 14:30                |
