@@ -43,7 +43,7 @@ def render_default_state(project_name: str, goal: str, language: str) -> str:
 ### Phase 2 — Core Implementation
 - [ ] Implement core business logic
 - [ ] Add error handling and logging
-- [ ] Write unit tests (target: ≥80% coverage)
+- [ ] Write unit tests (target: >=80% coverage)
 - [ ] Performance profiling
 
 ### Phase 3 — Integration & Polish

@@ -12,7 +12,7 @@ from claudestate.templates import render_default_state
 def tmp_project(tmp_path):
     """Create a temp project with a minimal STATE.md."""
     content = render_default_state("TestProject", "Test the tool", "Python")
-    (tmp_path / "STATE.md").write_text(content)
+    (tmp_path / "STATE.md").write_text(content, encoding="utf-8")
     return tmp_path
 
 
